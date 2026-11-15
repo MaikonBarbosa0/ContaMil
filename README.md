@@ -1,39 +1,48 @@
 # ContaMil
-Aplicativo de finanças pessoais para organizar salário, gastos e despesas recorrentes, com gráficos por categoria, cores personalizáveis e temas claro e escuro. Versões web e mobile, com armazenamento local no celular e funcionamento offline.
-=======
-# CONTAMIL
 
-Aplicativo de finanças pessoais para uso individual. Informe seu salário, registre despesas e acompanhe o orçamento mensal com gráficos por categoria.
+Aplicativo web de finanças pessoais para uso individual. Organize seu salário, registre gastos e despesas recorrentes e acompanhe seu orçamento com gráficos por categoria, cores personalizáveis e temas claro e escuro.
 
-O projeto oferece uma versão web com Angular, Spring Boot e PostgreSQL e um aplicativo Android/iOS com React Native, Expo e SQLite. O mobile salva seus próprios dados no aparelho e funciona de forma independente da versão web.
-
-## Partes do projeto
-
-| Parte | Tecnologias | Responsabilidade | Documentação |
-| --- | --- | --- | --- |
-| Frontend web | Angular 22 e TypeScript | Interface no navegador, integrada à API | [frontend/README.md](frontend/README.md) |
-| Backend | Java 25, Spring Boot 4.1.2 e PostgreSQL 18 | API REST, regras financeiras e persistência da versão web | [backend/README.md](backend/README.md) |
-| Mobile | React Native, Expo e SQLite | Aplicativo Android/iOS com persistência local, sem chamadas à API | [mobile/README.md](mobile/README.md) |
+Este repositório reúne o **frontend Angular** e o **backend Spring Boot**, com persistência em **PostgreSQL**. O aplicativo mobile é mantido em um projeto separado.
 
 ## Funcionalidades
 
-- Salário mensal em reais, com alterações a partir do mês escolhido e histórico preservado.
-- Registro, edição e exclusão de gastos com descrição, valor, data e categoria.
-- Despesas recorrentes mensais, com recuperação de vencimentos pendentes sem duplicação.
-- Recorrências dos dias 29, 30 e 31 ajustadas ao último dia dos meses mais curtos, mantendo o dia original nos meses seguintes.
-- Categorias com nomes fixos e cores editáveis, usadas também nas legendas e nos gráficos.
-- Visão mensal com salário, gastos, saldo, distribuição por categoria e uma linha de evolução para cada categoria.
-- Temas claro e escuro, com troca manual e preferência persistida.
+- Visão mensal com salário, total de gastos, saldo e últimos lançamentos.
+- Registro, edição e exclusão de gastos com descrição, valor em reais, data e categoria.
+- Histórico salarial, com mudanças a partir do mês escolhido e preservação dos meses anteriores.
+- Recorrências mensais com geração dos vencimentos pendentes sem duplicação.
+- Ajuste dos dias 29, 30 e 31 ao último dia dos meses mais curtos, mantendo o dia original nos meses seguintes.
+- Edição e cancelamento de recorrências com histórico preservado.
+- Categorias com nomes fixos e cores editáveis, utilizadas nos gastos, gráficos e legendas.
+- Gráfico de distribuição e evolução acumulada com uma linha por categoria.
+- Temas claro e escuro, com troca manual e preferência salva no navegador.
 
 As categorias são **Moradia, Mercado, Carro, Restaurantes, Lojas, Saúde, Educação, Lazer, Assinaturas e Outros**. A seleção é feita por lista; não há cadastro ou renomeação de categorias.
 
-O uso é individual, sem login. A configuração da versão web está preparada para execução local.
+A aplicação é de uso individual, sem login, e a configuração disponível é destinada à execução local.
 
-## Executar a versão web com Docker
+## Tecnologias e documentação
 
-Requisito: Docker com suporte a Docker Compose e contêineres Linux. No Windows, use o Docker Desktop com o mecanismo Linux em execução.
+| Parte | Tecnologias | Documentação |
+| --- | --- | --- |
+| Frontend | Angular 22, TypeScript e SVG | [frontend/README.md](frontend/README.md) |
+| Backend | Java 25, Spring Boot 4.1.2, Maven e Flyway | [backend/README.md](backend/README.md) |
+| Banco de dados | PostgreSQL 18.6 | Configurado em [compose.yaml](compose.yaml) |
 
-Na raiz do projeto, crie o arquivo de configuração caso ainda não exista:
+A interface consulta a API pelo caminho `/api`. Salários, gastos, recorrências e cores das categorias ficam no PostgreSQL. A preferência de tema fica no `localStorage` do navegador.
+
+## Executar com Docker
+
+### 1. Pré-requisitos
+
+Tenha o Docker com suporte a Docker Compose e contêineres Linux. No Windows, mantenha o Docker Desktop em execução com o mecanismo Linux ativo.
+
+Nesta opção, Java, Maven, Node.js e PostgreSQL são fornecidos pelas imagens Docker; não é necessário instalá-los separadamente no computador.
+
+Execute os comandos a seguir na **raiz do projeto**, onde está o arquivo `compose.yaml`.
+
+### 2. Configurar o ambiente
+
+Crie o arquivo `.env` caso ainda não exista. Exemplo em PowerShell:
 
 ```powershell
 if (-not (Test-Path -LiteralPath .env)) {
@@ -41,61 +50,116 @@ if (-not (Test-Path -LiteralPath .env)) {
 }
 ```
 
-Edite `.env` e defina sua senha local em `DB_PASSWORD`. O arquivo `.env.example` contém apenas valores de exemplo; `.env` fica fora do versionamento.
+Edite `.env` e substitua o valor de exemplo de `DB_PASSWORD` por uma senha local. Use [.env.example](.env.example) como referência:
 
-Inicie os serviços:
+| Variável | Finalidade | Valor de exemplo |
+| --- | --- | --- |
+| `DB_DATABASE` | Nome do banco | `contamil` |
+| `DB_USERNAME` | Usuário do banco | `contamil` |
+| `DB_PASSWORD` | Senha local do banco | Defina sua própria senha |
+| `BACKEND_PORT` | Porta publicada da API | `8080` |
+| `FRONTEND_PORT` | Porta publicada da interface | `4200` |
+
+O `.env` fica fora do versionamento; o `.env.example` contém somente valores de exemplo e acompanha o código.
+
+### 3. Iniciar a aplicação
 
 ```powershell
 docker compose up --build -d
 ```
 
-- Interface web: [http://localhost:4200](http://localhost:4200).
-- Base da API REST: `http://localhost:8080/api`; verificação em [GET /api/health](http://localhost:8080/api/health).
-- Contrato e endpoints: [backend/API.md](backend/API.md).
+O comando prepara o frontend, a API e o banco. A API aguarda o PostgreSQL passar pela verificação de saúde antes de iniciar.
 
-O PostgreSQL usa o volume persistente `postgres_data` e não publica uma porta para acesso pelo host. Interface e API ficam vinculadas a `127.0.0.1`. As portas da aplicação podem ser alteradas por `FRONTEND_PORT` e `BACKEND_PORT` no `.env`.
+Com as portas padrão:
 
-O primeiro acesso começa sem lançamentos financeiros fictícios. Informe o salário e adicione os gastos pela interface.
+- Interface: [http://localhost:4200](http://localhost:4200).
+- Base da API: `http://localhost:8080/api`.
+- Verificação da API e conexão com o banco: [GET /api/health](http://localhost:8080/api/health).
+- Contrato dos endpoints: [backend/API.md](backend/API.md).
 
-Para consultar os serviços, acompanhar logs e parar a aplicação mantendo o volume:
+Se alterar as portas no `.env`, utilize os novos valores nos endereços de acesso.
+
+### 4. Começar a usar
+
+No primeiro acesso, o banco contém as categorias, sem lançamentos financeiros fictícios:
+
+1. Na tela **Salário**, informe o valor e o mês de início de vigência.
+2. Em **Gastos**, registre uma despesa e selecione uma categoria da lista.
+3. Marque **Repetir todo mês** para criar uma despesa recorrente.
+4. Consulte os gráficos em **Visão geral** e personalize as cores em **Categorias**.
+
+### 5. Consultar logs e parar os serviços
 
 ```powershell
 docker compose ps
-docker compose logs backend frontend
+docker compose logs frontend backend
 docker compose down
 ```
 
-As instruções para desenvolvimento com Node.js ou Maven estão nos READMEs de [frontend](frontend/README.md) e [backend](backend/README.md).
+O PostgreSQL utiliza o volume persistente `postgres_data`; reiniciar os serviços ou executar `docker compose down` mantém os dados nesse volume. Interface e API ficam vinculadas a `127.0.0.1`, e o banco não publica a porta 5432 para o computador.
 
-## Executar o aplicativo mobile
+## Desenvolvimento local
 
-O aplicativo mobile não depende dos serviços Docker. Na raiz do projeto:
+### Frontend Angular
+
+Com Node.js 26 e npm disponíveis, prepare o `.env` conforme as instruções acima e inicie somente o banco e a API a partir da raiz:
 
 ```powershell
-cd mobile
+docker compose up --build -d database backend
+```
+
+Em outro terminal, partindo da raiz:
+
+```powershell
+cd frontend
 npm ci
 npm start
 ```
 
-O comando inicia o Expo em `localhost`. Consulte o [README mobile](mobile/README.md) para abrir no Expo Go ou em um emulador, executar testes e exportar os bundles.
+O Angular inicia em `http://127.0.0.1:4200`. O proxy de desenvolvimento encaminha `/api/**` para `http://127.0.0.1:8080`. Se alterar a porta da API, ajuste também o `target` de [frontend/proxy.conf.json](frontend/proxy.conf.json).
 
-Os dados mobile ficam em um banco SQLite local e não são sincronizados com a versão web. A exportação de bundles não gera um instalável APK/IPA.
+Se a interface Docker já ocupar a porta 4200, use uma porta alternativa no servidor Angular:
 
-## Estrutura
-
-```text
-CONTAMIL/
-├── backend/          # API Java e migrações do PostgreSQL
-├── frontend/         # Aplicação Angular
-├── mobile/           # Aplicativo React Native + Expo
-├── compose.yaml      # Ambiente local da versão web
-├── .env.example      # Exemplo de configuração do Docker Compose
-├── IDEA.md           # Ideia original
-└── Agente.md         # Instruções para agentes IA e decisões do projeto
+```powershell
+npm start -- --port 4201
 ```
 
-## Desenvolvimento
+Consulte o [README do frontend](frontend/README.md) para detalhes de build, testes e organização do código.
 
-Cada parte tem seus próprios comandos de instalação, testes e compilação. Consulte a documentação correspondente antes de executá-los.
+### Backend Spring Boot
 
-A descrição original está em [IDEA.md](IDEA.md). Para trabalho assistido por agentes IA, leia [Agente.md](Agente.md), que registra as regras e decisões confirmadas.
+O desenvolvimento fora do Docker exige JDK 25, Maven e uma instância PostgreSQL acessível pelo computador. O banco do Compose padrão não publica sua porta para uso pelo Maven no host.
+
+As variáveis de ambiente precisam estar configuradas na sessão que iniciará o Java; o Spring Boot não carrega automaticamente o `.env` da raiz nessa modalidade. O [README do backend](backend/README.md) contém os comandos, as variáveis necessárias e as instruções para testes e empacotamento.
+
+## Testes e compilação
+
+Na pasta `frontend`, com as dependências instaladas:
+
+```powershell
+npm test -- --watch=false
+npm run build
+```
+
+Na pasta `backend`, com JDK 25 e Maven disponíveis:
+
+```powershell
+mvn verify
+```
+
+O `mvn verify` compila, executa os testes e gera o JAR. Os testes do backend usam H2 em memória e não exigem um PostgreSQL em execução. Os testes de utilidades do frontend também não precisam da API.
+
+## Estrutura do repositório
+
+```text
+ContaMil/
+├── backend/          # API REST, regras financeiras e migrações
+├── frontend/         # Interface Angular
+├── compose.yaml      # Ambiente local com frontend, backend e PostgreSQL
+├── .env.example      # Exemplo de configuração local
+├── .gitignore        # Exclusões de credenciais, dependências e arquivos gerados
+├── IDEA.md           # Ideia original do projeto
+└── Agente.md         # Orientações para agentes IA e decisões registradas
+```
+
+Para trabalho assistido por agentes IA, consulte [Agente.md](Agente.md). A descrição original está em [IDEA.md](IDEA.md).

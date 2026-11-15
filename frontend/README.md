@@ -137,7 +137,7 @@ docker compose stop frontend
 | Salário e histórico, despesas, recorrências e cores das categorias | PostgreSQL, acessado pela API Spring Boot. No Compose, o banco usa um volume persistente. |
 | Preferência de tema | `localStorage` do navegador, na chave `contamil-theme`, por origem acessada. Sem preferência salva, a interface inicia no tema claro. |
 
-A versão web depende da API para consultar e salvar as informações financeiras. O [aplicativo mobile](../mobile/README.md) é um projeto separado com React Native/Expo e SQLite no aparelho; funciona de forma independente e não sincroniza seus dados com esta interface.
+A aplicação web depende da API para consultar e salvar as informações financeiras. Este repositório reúne o frontend Angular, o backend Spring Boot e a infraestrutura PostgreSQL. A versão mobile é mantida em um projeto separado.
 
 ## Organização do código
 

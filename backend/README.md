@@ -2,7 +2,7 @@
 
 API REST da versão web do CONTAMIL, um aplicativo de finanças pessoais para uso individual. O backend registra salários e despesas, gera recorrências mensais e fornece os dados usados nos gráficos da interface Angular.
 
-Esta parte utiliza PostgreSQL e foi configurada para execução local, sem cadastro ou login. O [aplicativo mobile](../mobile/README.md) é independente: guarda os dados no aparelho e não utiliza esta API.
+Esta parte utiliza PostgreSQL e foi configurada para execução local, sem cadastro ou login, em conjunto com a interface Angular deste repositório.
 
 ## Tecnologias
 
