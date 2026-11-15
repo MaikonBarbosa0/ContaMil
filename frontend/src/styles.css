@@ -1,0 +1,197 @@
+
+#contamil-app{--ct-bg:light-dark(#f7f8f5,#161c1a);--ct-surface:light-dark(#fff,#202825);--ct-side:light-dark(#f1f4ef,#1b221f);--ct-text:light-dark(#24342e,#e6eee7);--ct-muted:light-dark(#66766e,#a0b0a6);--ct-line:light-dark(#e6ebe4,#343f38);--ct-soft:light-dark(#edf2eb,#2c3830);--ct-accent:light-dark(#dce8dc,#344b3c);--ct-accent-text:light-dark(#3c5d49,#c7ddca);--ct-button:light-dark(#405d4b,#d4e5d4);--ct-button-text:light-dark(#fff,#203327);--ct-danger:light-dark(#a04c4c,#efacac);--ct-radius:17px;--ct-space:26px;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ct-text);font-size:14px;line-height:1.5;width:100%;background:transparent;box-sizing:border-box}
+#contamil-app *,#contamil-app *:before,#contamil-app *:after{box-sizing:border-box}
+#contamil-app [hidden]{display:none!important}
+#contamil-app h1,#contamil-app h2,#contamil-app p{margin:0}
+#contamil-app button,#contamil-app input{font:inherit}
+#contamil-app button{border:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+#contamil-app button:focus-visible,#contamil-app input:focus-visible{outline:2px solid var(--ct-accent-text);outline-offset:3px}
+#contamil-app button svg,#contamil-app i[data-lucide],#contamil-app .ct-metric-label>svg,#contamil-app .ct-panel-heading>svg{width:17px;height:17px;flex-shrink:0;stroke-width:1.7}
+#contamil-app .ct-preview-note{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:0 2px 11px;color:light-dark(#657469,#b0beb4);font-size:11px;letter-spacing:.02em}
+#contamil-app .ct-preview-note>span:first-child{font-weight:600;letter-spacing:.1em}
+#contamil-app .ct-product{position:relative;display:grid;grid-template-columns:168px minmax(0,1fr);background:var(--ct-bg);border:1px solid var(--ct-line);border-radius:20px;overflow:hidden;min-height:764px;isolation:isolate}
+#contamil-app .ct-sidebar{background:var(--ct-side);border-right:1px solid var(--ct-line);padding:28px 15px;display:flex;flex-direction:column;gap:0;min-width:0}
+#contamil-app .ct-brand{display:flex;align-items:center;gap:8px;font-size:24px;font-weight:650;letter-spacing:-1.1px;padding:0 8px}
+#contamil-app .ct-brand-mark{width:29px;height:29px;border-radius:9px;background:var(--ct-accent);color:var(--ct-accent-text);display:grid;place-items:center}
+#contamil-app .ct-brand-mark svg{width:19px;height:19px;stroke-width:2}
+#contamil-app .ct-brand-period{color:var(--ct-accent-text)}
+#contamil-app .ct-nav-label{font-size:10px;letter-spacing:.16em;color:var(--ct-muted);padding:42px 11px 13px;font-weight:600}
+#contamil-app .ct-navigation{display:flex;flex-direction:column;gap:6px}
+#contamil-app .ct-nav-item{padding:11px 12px;border-radius:10px;background:transparent;justify-content:flex-start;color:var(--ct-muted);text-align:left;font-size:13px;gap:10px}
+#contamil-app .ct-nav-item:hover{background:var(--ct-soft);color:var(--ct-text)}
+#contamil-app .ct-nav-item[aria-current="page"]{background:var(--ct-accent);color:var(--ct-accent-text);font-weight:600}
+#contamil-app .ct-sidebar-bottom{margin-top:auto;padding:36px 11px 0;display:flex;flex-direction:column;gap:13px;color:var(--ct-muted);font-size:11px;line-height:1.65}
+#contamil-app .ct-sidebar-bottom>svg{width:22px;height:22px;color:var(--ct-accent-text);stroke-width:1.4}
+#contamil-app .ct-main{min-width:0;padding:0 var(--ct-space) 12px}
+#contamil-app .ct-topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:20px 0;border-bottom:1px solid var(--ct-line)}
+#contamil-app .ct-breadcrumb{font-size:11px;color:var(--ct-muted);display:flex;align-items:center;gap:10px}
+#contamil-app .ct-breadcrumb strong{font-weight:500;color:var(--ct-text)}
+#contamil-app .ct-breadcrumb>span{opacity:.45}
+#contamil-app .ct-themes{display:flex;align-items:center;gap:3px;background:var(--ct-soft);padding:3px;border-radius:9px}
+#contamil-app .ct-themes button{padding:5px 8px;font-size:11px;color:var(--ct-muted);background:transparent;border-radius:7px;gap:5px}
+#contamil-app .ct-themes button svg{width:13px;height:13px}
+#contamil-app .ct-themes button[aria-pressed="true"]{background:var(--ct-surface);color:var(--ct-text);box-shadow:0 1px 3px #0000000a}
+#contamil-app .ct-page{padding:26px 0 8px}
+#contamil-app .ct-page-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:23px}
+#contamil-app .ct-eyebrow{font-size:10px;letter-spacing:.17em;color:var(--ct-muted);font-weight:600;margin-bottom:7px}
+#contamil-app h1{font-size:25px;letter-spacing:-.85px;line-height:1.22;font-weight:600}
+#contamil-app .ct-subtitle{margin-top:7px;color:var(--ct-muted);font-size:12px}
+#contamil-app .ct-period{display:flex;flex-direction:column;gap:5px;flex-shrink:0}
+#contamil-app .ct-period>span{font-size:10px;color:var(--ct-muted)}
+#contamil-app .ct-period input{background:var(--ct-surface);color:var(--ct-text);border:1px solid var(--ct-line);border-radius:9px;padding:8px 9px;max-width:165px;font-size:12px;min-width:0}
+#contamil-app .ct-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:18px}
+#contamil-app .ct-metric{display:flex;flex-direction:column;gap:10px;padding:17px;background:var(--ct-surface);border:1px solid var(--ct-line);border-radius:var(--ct-radius);min-width:0}
+#contamil-app .ct-metric-label{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--ct-muted);font-size:11px}
+#contamil-app .ct-metric-label>svg{width:15px;height:15px;opacity:.7}
+#contamil-app .ct-metric>strong{font-size:24px;letter-spacing:-.8px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.25;white-space:nowrap}
+#contamil-app .ct-metric-caption{font-size:10px;color:var(--ct-muted)}
+#contamil-app .ct-balance{background:var(--ct-soft);border-color:var(--ct-soft)}
+#contamil-app .ct-charts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:18px}
+#contamil-app .ct-panel{background:var(--ct-surface);border:1px solid var(--ct-line);border-radius:var(--ct-radius);padding:18px;min-width:0}
+#contamil-app .ct-panel-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:9px;margin-bottom:16px}
+#contamil-app .ct-panel-heading h2{font-size:13px;font-weight:600;letter-spacing:-.15px}
+#contamil-app .ct-panel-heading p{color:var(--ct-muted);font-size:10px;margin-top:4px}
+#contamil-app .ct-panel-heading>svg{color:var(--ct-muted);opacity:.7;width:15px;height:15px}
+#contamil-app .ct-category-chart{display:grid;grid-template-columns:1fr;gap:12px}
+#contamil-app .ct-donut-wrap{position:relative;width:156px;height:156px;margin:0 auto}
+#contamil-app .ct-donut{width:156px;height:156px;display:block}
+#contamil-app .ct-donut-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+#contamil-app .ct-donut-label span{font-size:10px;color:var(--ct-muted)}
+#contamil-app .ct-donut-label strong{font-size:17px;letter-spacing:-.5px;font-weight:600;font-variant-numeric:tabular-nums}
+#contamil-app .ct-legend{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 14px;padding-top:3px}
+#contamil-app .ct-legend-item{display:grid;grid-template-columns:7px minmax(0,1fr) auto;align-items:center;gap:6px;font-size:10px}
+#contamil-app .ct-dot{width:7px;height:7px;display:inline-block;border-radius:50%}
+#contamil-app .ct-legend-item>span:nth-child(2){overflow-wrap:anywhere}
+#contamil-app .ct-legend-item strong{color:var(--ct-muted);font-size:10px;font-weight:400;font-variant-numeric:tabular-nums}
+#contamil-app .ct-trend-head{display:flex;align-items:baseline;justify-content:space-between;gap:6px;flex-wrap:wrap;margin-top:20px}
+#contamil-app .ct-trend-head strong{font-size:23px;font-weight:600;letter-spacing:-.7px;font-variant-numeric:tabular-nums}
+#contamil-app .ct-trend-head span{font-size:10px;color:var(--ct-muted)}
+#contamil-app .ct-trend-chart{height:190px;margin-top:12px}
+#contamil-app .ct-line-svg{display:block;width:100%;height:190px;overflow:visible}
+#contamil-app .ct-line-svg text{font-family:inherit;font-size:11px;fill:var(--ct-muted)}
+#contamil-app .ct-recent .ct-panel-heading{align-items:center;margin-bottom:5px}
+#contamil-app .ct-text-button{background:transparent;color:var(--ct-accent-text);font-size:10px;font-weight:600;padding:5px 0}
+#contamil-app .ct-text-button svg{width:12px;height:12px}
+#contamil-app .ct-table{width:100%;border-collapse:collapse;font-size:11px}
+#contamil-app .ct-table th{color:var(--ct-muted);font-size:10px;font-weight:400;text-align:left;padding:10px 0 9px;border-bottom:1px solid var(--ct-line)}
+#contamil-app .ct-table td{padding:11px 0;border-bottom:1px solid var(--ct-line);vertical-align:middle}
+#contamil-app .ct-table tr:last-child td{border-bottom:0}
+#contamil-app .ct-table th:last-child,#contamil-app .ct-table td:last-child{text-align:right}
+#contamil-app .ct-table .ct-money{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:500}
+#contamil-app .ct-expense-description{display:flex;align-items:center;gap:8px;min-width:0}
+#contamil-app .ct-expense-icon{background:var(--ct-soft);width:29px;height:29px;display:flex;align-items:center;justify-content:center;border-radius:9px;color:var(--ct-muted);flex-shrink:0}
+#contamil-app .ct-expense-icon svg{width:14px;height:14px}
+#contamil-app .ct-description-copy{display:flex;flex-direction:column;gap:1px;overflow-wrap:anywhere}
+#contamil-app .ct-description-copy>span{font-size:10px;color:var(--ct-muted)}
+#contamil-app .ct-category-pill{font-size:10px;background:var(--ct-soft);border-radius:5px;padding:4px 7px;color:var(--ct-muted);display:inline-block;max-width:110px;overflow-wrap:anywhere}
+#contamil-app .ct-date-cell{font-size:10px;color:var(--ct-muted);white-space:nowrap}
+#contamil-app .ct-summary-action{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:17px}
+#contamil-app .ct-summary-action>span{font-size:11px;color:var(--ct-muted)}
+#contamil-app .ct-primary{background:var(--ct-button);color:var(--ct-button-text);padding:10px 13px;border-radius:9px;font-size:12px;font-weight:500}
+#contamil-app .ct-primary:hover{filter:brightness(.95)}
+#contamil-app .ct-primary svg{width:15px;height:15px}
+#contamil-app .ct-secondary{background:var(--ct-soft);color:var(--ct-text);padding:10px 12px;border-radius:9px;font-size:12px}
+#contamil-app .ct-expense-toolbar{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+#contamil-app .ct-expense-toolbar>span{color:var(--ct-muted);font-size:12px;font-variant-numeric:tabular-nums}
+#contamil-app .ct-edit-button{background:transparent;color:var(--ct-accent-text);font-size:10px;padding:6px 0 6px 8px}
+#contamil-app .ct-bottom-note{display:flex;align-items:center;gap:7px;color:var(--ct-muted);font-size:11px;margin-top:18px}
+#contamil-app .ct-bottom-note>svg{width:14px;height:14px;flex-shrink:0}
+#contamil-app .ct-salary-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:18px}
+#contamil-app .ct-field{display:flex;flex-direction:column;gap:7px;margin-bottom:17px;min-width:0}
+#contamil-app .ct-field>span{font-size:12px;font-weight:500}
+#contamil-app .ct-field input{width:100%;min-width:0;border:1px solid var(--ct-line);background:var(--ct-bg);color:var(--ct-text);border-radius:9px;padding:11px 12px;font-size:13px}
+#contamil-app .ct-field input::placeholder{color:var(--ct-muted);opacity:.8}
+#contamil-app .ct-info{display:flex;align-items:flex-start;gap:10px;color:var(--ct-muted);background:var(--ct-soft);padding:12px;border-radius:10px;font-size:11px;margin:3px 0 20px}
+#contamil-app .ct-info>svg{width:16px;height:16px;flex-shrink:0;margin-top:1px}
+#contamil-app .ct-history-item{padding:15px 0;border-bottom:1px solid var(--ct-line);display:flex;flex-direction:column;gap:4px}
+#contamil-app .ct-history-item:last-child{border:0}
+#contamil-app .ct-history-item span{color:var(--ct-muted);font-size:11px}
+#contamil-app .ct-history-item strong{font-size:19px;font-weight:500;font-variant-numeric:tabular-nums}
+#contamil-app .ct-live{color:var(--ct-accent-text);font-size:11px;min-height:18px;padding-top:7px}
+#contamil-app .ct-empty{color:var(--ct-muted);font-size:12px;text-align:center;padding:30px 4px}
+#contamil-app .ct-overlay{position:absolute;inset:0;z-index:5;background:#0b171065;display:flex;align-items:flex-start;justify-content:center;padding:72px 20px 20px;backdrop-filter:blur(3px)}
+#contamil-app .ct-dialog{width:440px;max-width:100%;background:var(--ct-surface);border:1px solid var(--ct-line);border-radius:20px;padding:25px;box-shadow:0 20px 70px #00000026}
+#contamil-app .ct-dialog-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:22px}
+#contamil-app .ct-dialog-heading h2{font-size:23px;letter-spacing:-.6px;font-weight:600}
+#contamil-app .ct-icon-button{padding:7px;border-radius:8px;background:var(--ct-soft);color:var(--ct-muted)}
+#contamil-app .ct-form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+#contamil-app .ct-checkbox{display:flex;align-items:flex-start;gap:10px;margin:5px 0 20px;cursor:inherit}
+#contamil-app .ct-checkbox input{accent-color:var(--ct-button);width:16px;height:16px;flex-shrink:0;margin:3px 0}
+#contamil-app .ct-checkbox>span{display:flex;flex-direction:column;gap:3px}
+#contamil-app .ct-checkbox strong{font-size:12px;font-weight:500}
+#contamil-app .ct-checkbox small{font-size:11px;color:var(--ct-muted)}
+#contamil-app .ct-dialog-actions{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap;padding-top:3px}
+#contamil-app .ct-delete{background:transparent;color:var(--ct-danger);font-size:11px;margin-right:auto;padding:8px 0}
+#contamil-app .ct-form-error{color:var(--ct-danger);font-size:12px;margin-bottom:15px}
+@media(min-width:1100px){#contamil-app .ct-product{grid-template-columns:178px minmax(0,1fr)}#contamil-app .ct-metric>strong{font-size:27px}}
+@media(max-width:859px){#contamil-app .ct-product{grid-template-columns:minmax(0,1fr);min-height:0}#contamil-app .ct-sidebar{padding:17px 23px 12px;border-right:0;border-bottom:1px solid var(--ct-line);flex-direction:row;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}#contamil-app .ct-brand{font-size:22px;padding:0}#contamil-app .ct-nav-label,#contamil-app .ct-sidebar-bottom{display:none}#contamil-app .ct-navigation{flex-direction:row;gap:4px}#contamil-app .ct-nav-item{padding:9px 11px;font-size:12px;gap:7px}#contamil-app .ct-main{padding:0 23px 12px}#contamil-app .ct-topbar{padding:15px 0}#contamil-app .ct-page{padding-top:22px}#contamil-app .ct-metric>strong{font-size:24px}#contamil-app .ct-overlay{padding-top:105px}}
+@media(max-width:599px){#contamil-app{font-size:14px}#contamil-app .ct-product{border-radius:16px}#contamil-app .ct-sidebar{padding:17px 17px 11px;gap:16px}#contamil-app .ct-brand{font-size:23px}#contamil-app .ct-navigation{width:100%;justify-content:space-between;gap:4px}#contamil-app .ct-nav-item{flex:1;justify-content:center;padding:9px 5px;font-size:11px;gap:6px}#contamil-app .ct-nav-item svg{width:15px;height:15px}#contamil-app .ct-main{padding:0 17px 10px}#contamil-app .ct-breadcrumb{font-size:10px;gap:6px}#contamil-app .ct-themes button{padding:5px 6px;font-size:10px}#contamil-app .ct-themes button svg{width:11px;height:11px}#contamil-app .ct-topbar{gap:9px}#contamil-app h1{font-size:24px}#contamil-app .ct-page-heading{align-items:flex-start;flex-direction:column;gap:16px;margin-bottom:19px}#contamil-app .ct-subtitle{font-size:11px}#contamil-app .ct-page-heading .ct-period{flex-direction:row;align-items:center;justify-content:space-between;width:100%}#contamil-app .ct-period>span{font-size:11px}#contamil-app .ct-period input{max-width:160px}#contamil-app .ct-metrics{grid-template-columns:1fr;gap:9px;margin-bottom:14px}#contamil-app .ct-metric{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 12px;padding:14px 15px}#contamil-app .ct-metric-label{grid-column:1;grid-row:1;font-size:11px;justify-content:flex-start;gap:8px}#contamil-app .ct-metric-label>svg{order:-1;width:14px;height:14px}#contamil-app .ct-metric>strong{grid-column:2;grid-row:1/3;font-size:21px}#contamil-app .ct-metric-caption{grid-column:1;grid-row:2;font-size:10px}#contamil-app .ct-charts{grid-template-columns:1fr;gap:14px;margin-bottom:14px}#contamil-app .ct-panel{padding:16px}#contamil-app .ct-panel-heading h2{font-size:13px}#contamil-app .ct-panel-heading p{font-size:10px}#contamil-app .ct-category-chart{grid-template-columns:142px minmax(0,1fr);align-items:center;gap:16px}#contamil-app .ct-donut-wrap,#contamil-app .ct-donut{width:142px;height:142px}#contamil-app .ct-legend{grid-template-columns:1fr;gap:11px;padding-top:0}#contamil-app .ct-legend-item,#contamil-app .ct-legend-item strong{font-size:10px}#contamil-app .ct-trend-head{margin-top:5px}#contamil-app .ct-trend-chart{height:175px;margin-top:9px}#contamil-app .ct-line-svg{height:175px}#contamil-app .ct-date-col,#contamil-app .ct-date-cell{display:none}#contamil-app .ct-table{font-size:11px}#contamil-app .ct-table th{font-size:10px}#contamil-app .ct-table .ct-category-col{display:none}#contamil-app .ct-table td.ct-category-cell{display:none}#contamil-app .ct-table .ct-expense-icon{display:none}#contamil-app .ct-table .ct-description-copy>span{font-size:10px}#contamil-app .ct-table td{padding:12px 0}#contamil-app .ct-summary-action>span{font-size:10px;max-width:115px}#contamil-app .ct-primary{font-size:11px;padding:10px 12px}#contamil-app .ct-salary-layout{grid-template-columns:1fr;gap:15px}#contamil-app .ct-overlay{padding:90px 12px 16px}#contamil-app .ct-dialog{padding:19px 17px;border-radius:17px}#contamil-app .ct-field input{font-size:16px;padding:10px}#contamil-app .ct-form-row{gap:10px}#contamil-app .ct-dialog-actions{gap:7px}#contamil-app .ct-delete{font-size:10px}#contamil-app .ct-dialog .ct-primary,#contamil-app .ct-dialog .ct-secondary{font-size:11px;padding:10px}#contamil-app .ct-preview-note{font-size:10px;gap:3px;padding-bottom:8px}#contamil-app .ct-preview-note>span:first-child{font-size:9px}#contamil-app .ct-preview-note>span:last-child{font-size:9px}}
+@media(max-width:359px){#contamil-app .ct-main{padding:0 13px 10px}#contamil-app .ct-sidebar{padding:16px 13px 10px}#contamil-app .ct-breadcrumb{gap:4px;font-size:9px}#contamil-app .ct-themes{gap:1px}#contamil-app .ct-themes button{gap:3px;padding:5px;font-size:9px}#contamil-app .ct-metric{padding:13px 12px;gap:5px 8px}#contamil-app .ct-metric>strong{font-size:19px}#contamil-app .ct-metric-caption{font-size:9px}#contamil-app .ct-category-chart{grid-template-columns:126px minmax(0,1fr);gap:10px}#contamil-app .ct-donut-wrap,#contamil-app .ct-donut{width:126px;height:126px}#contamil-app .ct-donut-label strong{font-size:15px}#contamil-app .ct-legend-item,#contamil-app .ct-legend-item strong{font-size:9px}#contamil-app .ct-legend-item{gap:4px}#contamil-app .ct-panel{padding:14px}#contamil-app .ct-page-heading h1{font-size:23px}#contamil-app .ct-form-row{grid-template-columns:1fr;gap:0}#contamil-app .ct-overlay{padding-top:70px}#contamil-app .ct-dialog .ct-field{margin-bottom:13px}}
+@media(pointer:coarse){#contamil-app button{min-height:44px}#contamil-app .ct-themes button{min-height:44px}#contamil-app .ct-nav-item{min-height:44px}#contamil-app .ct-field input{min-height:44px}}
+@media(prefers-reduced-motion:no-preference){#contamil-app .ct-nav-item,#contamil-app .ct-themes button,#contamil-app .ct-primary{transition:background-color .16s ease,color .16s ease}}
+#contamil-app .ct-preview-note,#contamil-app .ct-preview-note>span:first-child,#contamil-app .ct-preview-note>span:last-child,#contamil-app .ct-nav-label,#contamil-app .ct-eyebrow,#contamil-app .ct-period>span,#contamil-app .ct-metric-caption,#contamil-app .ct-panel-heading p,#contamil-app .ct-donut-label span,#contamil-app .ct-legend-item,#contamil-app .ct-legend-item strong,#contamil-app .ct-trend-head span,#contamil-app .ct-text-button,#contamil-app .ct-table th,#contamil-app .ct-table .ct-description-copy>span,#contamil-app .ct-category-pill,#contamil-app .ct-date-cell,#contamil-app .ct-edit-button,#contamil-app .ct-summary-action>span,#contamil-app .ct-delete{font-size:11px}
+#contamil-app .ct-metric-caption{overflow-wrap:anywhere}
+@media(max-width:599px){#contamil-app .ct-metric{grid-template-columns:minmax(0,1fr) auto}#contamil-app .ct-breadcrumb{font-size:11px}#contamil-app .ct-themes button{font-size:11px}}
+#contamil-app select{font:inherit}
+#contamil-app select:focus-visible{outline:2px solid var(--ct-accent-text);outline-offset:3px}
+#contamil-app .ct-field select{width:100%;min-width:0;border:1px solid var(--ct-line);background:var(--ct-bg);color:var(--ct-text);border-radius:9px;padding:11px 12px;font-size:13px}
+#contamil-app .ct-field>small{font-size:11px;color:var(--ct-muted);font-weight:400}
+#contamil-app .ct-category-control{display:flex;align-items:center;gap:10px;min-width:0}
+#contamil-app .ct-selected-color{height:19px;width:19px;flex-shrink:0;border-radius:6px;background:var(--ct-line)}
+#contamil-app .ct-category-control select{flex:1}
+#contamil-app .ct-category-pill{display:inline-flex;align-items:center;gap:6px}
+#contamil-app .ct-inline-category{display:inline-flex;align-items:center;gap:5px}
+#contamil-app .ct-inline-category .ct-dot{width:6px;height:6px;flex-shrink:0}
+#contamil-app .ct-description-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+#contamil-app .ct-trend-chart{height:183px}
+#contamil-app .ct-line-svg{height:183px}
+#contamil-app .ct-series-legend{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 8px;margin-top:9px}
+#contamil-app .ct-series-item{background:transparent;color:var(--ct-text);padding:5px 4px;display:grid;grid-template-columns:25px minmax(0,1fr);gap:2px 7px;border-radius:7px;text-align:left;white-space:normal;justify-content:stretch;font-size:11px;min-width:0}
+#contamil-app .ct-series-item svg{width:25px;height:10px;grid-column:1;grid-row:1;margin-top:3px}
+#contamil-app .ct-series-name{grid-column:2;grid-row:1;overflow-wrap:anywhere;line-height:1.4}
+#contamil-app .ct-series-total{grid-column:2;grid-row:2;color:var(--ct-muted);font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap}
+#contamil-app .ct-series-item[aria-pressed="true"]{background:var(--ct-soft)}
+#contamil-app .ct-category-settings{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:26px}
+#contamil-app .ct-color-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 12px;min-width:0;padding:15px 0;border-top:1px solid var(--ct-line)}
+#contamil-app .ct-color-row:nth-child(-n+2){border-top:0}
+#contamil-app .ct-color-name{display:flex;align-items:center;gap:7px;font-size:12px;min-width:0;overflow-wrap:anywhere}
+#contamil-app .ct-color-name strong{font-weight:500}
+#contamil-app .ct-color-controls{display:flex;align-items:center;gap:7px}
+#contamil-app .ct-color-picker{width:33px;height:33px;flex-shrink:0;padding:2px;border:1px solid var(--ct-line);background:var(--ct-bg);border-radius:8px}
+#contamil-app .ct-color-hex{width:83px;min-width:0;padding:8px;border:1px solid var(--ct-line);background:var(--ct-bg);border-radius:8px;color:var(--ct-text);font-family:Consolas,monospace;font-size:11px;text-transform:uppercase}
+#contamil-app .ct-color-error{grid-column:1/-1;color:var(--ct-danger);font-size:11px}
+#contamil-app .ct-hidden-label{position:absolute;width:1px;height:1px;margin:-1px;padding:0;clip:rect(0,0,0,0);overflow:hidden;white-space:nowrap}
+@media(max-width:599px){#contamil-app .ct-navigation{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5px;width:100%}#contamil-app .ct-nav-item{justify-content:flex-start;padding:9px 12px;font-size:12px}#contamil-app .ct-field select{font-size:16px;padding:10px}#contamil-app .ct-category-settings{grid-template-columns:1fr}#contamil-app .ct-color-row:nth-child(2){border-top:1px solid var(--ct-line)}#contamil-app .ct-color-row{padding:14px 0}#contamil-app .ct-color-name{font-size:13px}#contamil-app .ct-color-picker{width:37px;height:37px}#contamil-app .ct-color-hex{width:89px;font-size:12px;padding:9px}#contamil-app .ct-series-legend{column-gap:6px}#contamil-app .ct-series-item{padding:6px 2px;grid-template-columns:21px minmax(0,1fr);column-gap:5px}#contamil-app .ct-series-item svg{width:21px}}
+@media(max-width:359px){#contamil-app .ct-color-controls{gap:5px}#contamil-app .ct-color-row{column-gap:7px}#contamil-app .ct-color-name{font-size:12px;gap:5px}#contamil-app .ct-color-hex{width:83px;font-size:11px}#contamil-app .ct-series-legend{grid-template-columns:1fr}#contamil-app .ct-series-item{grid-template-columns:25px minmax(0,1fr) auto;column-gap:7px;padding:6px 3px}#contamil-app .ct-series-total{grid-column:3;grid-row:1}}
+@media(pointer:coarse){#contamil-app .ct-field select,#contamil-app .ct-color-picker,#contamil-app .ct-color-hex{min-height:44px}}
+
+html { color-scheme:light; background:light-dark(#f7f8f5,#161c1a); }
+body { margin:0; padding:16px; min-width:320px; box-sizing:border-box; background:light-dark(#f7f8f5,#161c1a); }
+#contamil-app { max-width:1320px; margin:0 auto; }
+#contamil-app .ct-product { min-height:calc(100dvh - 32px); }
+#contamil-app a { color:var(--ct-accent-text); }
+#contamil-app .ct-brand { text-decoration:none; color:var(--ct-text); }
+#contamil-app .ct-nav-item { display:flex; align-items:center; gap:10px; text-decoration:none; }
+#contamil-app .ct-text-button { display:inline-flex; align-items:center; gap:6px; text-decoration:none; }
+#contamil-app .ct-nav-item.ct-active { background:var(--ct-accent); color:var(--ct-accent-text); font-weight:600; }
+#contamil-app button,#contamil-app a,#contamil-app select,#contamil-app input[type=color] { cursor:pointer; }
+#contamil-app button:disabled,#contamil-app input:disabled { opacity:.6; cursor:wait; }
+#contamil-app input[readonly] { opacity:.7; }
+#contamil-app .ct-dialog { position:fixed; inset:0; margin:auto; max-height:calc(100dvh - 32px); overflow-y:auto; color:var(--ct-text); }
+#contamil-app .ct-dialog::backdrop { background:#0b171065; backdrop-filter:blur(3px); }
+#contamil-app .ct-dialog:not([open]) { display:none; }
+#contamil-app .ct-alert { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:14px; margin-top:16px; border:1px solid var(--ct-line); border-radius:10px; color:var(--ct-danger); background:var(--ct-surface); font-size:13px; }
+#contamil-app .ct-loading { margin-top:16px; color:var(--ct-muted); font-size:12px; }
+#contamil-app .ct-recurring-panel { margin-top:22px; }
+#contamil-app .ct-recurrence { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:17px 0; border-top:1px solid var(--ct-line); }
+#contamil-app .ct-recurrence:first-child { border-top:0; }
+#contamil-app .ct-recurrence-copy { display:flex; flex-direction:column; gap:5px; min-width:0; overflow-wrap:anywhere; }
+#contamil-app .ct-recurrence-copy strong { font-size:13px; font-weight:500; }
+#contamil-app .ct-recurrence-copy span { display:flex; align-items:center; gap:6px; color:var(--ct-muted); font-size:12px; flex-wrap:wrap; }
+#contamil-app .ct-recurrence-copy small { color:var(--ct-muted); font-size:11px; }
+#contamil-app .ct-row-actions { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+#contamil-app .ct-row-actions .ct-delete { margin:0; }
+#contamil-app .ct-field input,#contamil-app .ct-field select { transition:border-color .15s ease; }
+#contamil-app .ct-field input.ng-invalid.ng-touched,#contamil-app .ct-field select.ng-invalid.ng-touched { border-color:var(--ct-danger); }
+@media(max-width:599px) { body { padding:0; } #contamil-app .ct-product { min-height:100dvh; border-radius:0; border:0; } #contamil-app .ct-recurrence { align-items:flex-start; flex-direction:column; gap:10px; } #contamil-app .ct-row-actions { flex-wrap:wrap; } #contamil-app .ct-dialog { max-height:calc(100dvh - 20px); width:calc(100% - 24px); padding:20px 17px; } }
+@media(prefers-reduced-motion:reduce) { #contamil-app *,#contamil-app *::before,#contamil-app *::after { transition:none !important; scroll-behavior:auto !important; } }

@@ -1,0 +1,72 @@
+# Configurações locais e credenciais; mantenha o exemplo no repositório.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+keystore.properties
+key.properties
+
+# Dependências e caches de desenvolvimento.
+**/node_modules/
+**/.angular/
+**/.expo/
+**/.cache/
+**/.gradle/
+**/.kotlin/
+*.tsbuildinfo
+expo-env.d.ts
+
+# Compilação, cobertura, testes e exportações.
+**/target/
+**/dist/
+**/out-tsc/
+**/coverage/
+/mobile/.test-build/
+/mobile/artifacts/
+*.class
+*.apk
+*.aab
+*.ipa
+
+# Projetos nativos gerados pelo Expo, conforme a configuração do mobile.
+/mobile/android/
+/mobile/ios/
+
+# Cópias locais do banco financeiro mobile, incluindo WAL e journals.
+# As migrações SQL e o código do banco continuam versionáveis.
+/mobile/**/*.db
+/mobile/**/*.db-*
+/mobile/**/*.sqlite
+/mobile/**/*.sqlite-*
+/mobile/**/*.sqlite3
+/mobile/**/*.sqlite3-*
+
+# Ferramentas e prévias locais.
+.tools/
+.preview/
+
+# Logs e diagnósticos locais.
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.hprof
+*.heapsnapshot
+
+# Metadados locais de editores e do sistema operacional.
+.idea/
+.vs/
+.history/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~

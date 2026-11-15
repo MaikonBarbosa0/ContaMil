@@ -1,0 +1,18 @@
+<div id="contamil-app" lang="pt-BR" [style.color-scheme]="theme()">
+  <div class="ct-product">
+    <aside class="ct-sidebar">
+      <a class="ct-brand" routerLink="/resumo" aria-label="CONTAMIL, visão geral"><span class="ct-brand-mark"><app-icon name="chart" /></span><span>contamil<span class="ct-brand-period">.</span></span></a>
+      <p class="ct-nav-label">SEU ESPAÇO</p>
+      <nav class="ct-navigation" aria-label="Navegação principal">@for (item of navigation; track item.path) {<a class="ct-nav-item" [routerLink]="item.path" routerLinkActive="ct-active" ariaCurrentWhenActive="page"><app-icon [name]="item.icon" /><span>{{item.label}}</span></a>}</nav>
+      <div class="ct-sidebar-bottom"><app-icon name="sprout" /><span>Um pouco mais de clareza,<br>todos os dias.</span></div>
+    </aside>
+    <main class="ct-main" [attr.aria-busy]="store.loading()">
+      <header class="ct-topbar"><span class="ct-breadcrumb">Meu financeiro <span>/</span> <strong>{{pageName()}}</strong></span><div class="ct-themes" role="group" aria-label="Tema da interface"><button type="button" [attr.aria-pressed]="theme() === 'light'" (click)="theme.set('light')"><app-icon name="sun" /><span>Claro</span></button><button type="button" [attr.aria-pressed]="theme() === 'dark'" (click)="theme.set('dark')"><app-icon name="moon" /><span>Escuro</span></button></div></header>
+      @if (store.error() && !store.editor()) {<div class="ct-alert" role="alert"><span>{{store.error()}}</span><button class="ct-secondary" type="button" [disabled]="store.disabled()" (click)="store.load()"><app-icon name="refresh" />Atualizar</button></div>}
+      @if (store.loading()) {<p class="ct-loading" role="status">Carregando suas finanças…</p>}
+      <router-outlet />
+      <p class="ct-live" role="status" aria-live="polite">{{store.message()}}</p>
+    </main>
+    <app-expense-dialog />
+  </div>
+</div>
